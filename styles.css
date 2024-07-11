@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap");
+
+:root {
+  --cloudy: #e5eeef;
+  --primary-color: gray;
+  --text-dark: #0a0a0a;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  position: relative;
+  isolation: isolate;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  max-width: var(--max-width);
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9;
+ 
+  
+}
+
+.nav__links {
+  list-style: none;
+  position: fixed;
+  right: 1rem;
+  top: 75px;
+  width: 100%;
+  max-width: 350px;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  border-radius: 1rem;
+  display: none;
+  background-color: black;
+ 
+}
+
+.nav__links.open {
+  display: flex;
+}
+
+.nav__links a {
+  white-space: nowrap;
+  font-weight: 500;
+  color: white;
+}
+
+.nav__links a:hover {
+  color: var(--primary-color);
+}
+
+.nav__menu__btn {
+  padding: 5px 10px;
+  font-size: 30px;
+  color: black;
+  background-color: var(--primary-color);
+  border: 1px solid var(--white);
+  border-radius: 5px;
+}
+.nav__links a.active {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+  }
+
+.header__container {
+  display: grid;
+}
+
+.header__image {
+  position: relative;
+  isolation: isolate;
+
+  min-height: max(75vh, 500px);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom-left-radius: 8rem;
+}
+
+.header__image::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--primary-color);
+  z-index: 1;
+  animation: scroll-right 0.5s 0.3s linear forwards;
+}
+
+.header__image.reveal {
+  background-image: url("nature.jpg");
+}
+
+.header__image.reveal::after {
+  left: unset;
+  right: 0;
+  animation: scroll-left 0.5s linear forwards;
+}
+
+@keyframes scroll-right {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.header__content {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.header__content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 3rem;
+  color: var(--text-dark);
+}
+
+.header__content h2 {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  font-weight: 200;
+  line-height: 3rem;
+  color: var(--text-dark);
+}
+
+.header__content p {
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+.banner {
+  margin-top: 5rem;
+  display: grid;
+  z-index: 0;
+}
+
+.banner__card {
+  padding: 2rem;
+}
+
+.banner__card:nth-child(1) {
+  position: relative;
+  isolation: isolate;
+  padding-block: 5rem;
+  background-color: gray;
+}
+
+.banner__card:nth-child(2) {
+  background-color: gray;
+}
+
+.banner__card:nth-child(3) {
+  background-color: gray;
+}
+
+.banner__card:nth-child(4) {
+  background-color: gray;
+}
+
+.banner__card h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+}
+
+.banner__card p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.banner__card a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.banner__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: calc(100% + 4rem);
+  width: 100%;
+  padding-top: 4rem;
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  background-color: var(--primary-color);
+  border-top-right-radius: 100%;
+}
+
+.banner__content h2 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 5rem;
+  color: var(--text-dark);
+}
+
+.banner__content p {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.banner__content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+@media (width > 540px) {
+  .header__image {
+    min-height: max(75vh, 550px);
+  }
+
+  .banner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nav__links a:hover {
+    color: black;
+  }
+
+  .nav__links a.active {
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+  }
+  .nav__links {
+    background-color: var(--primary-color);
+  }
+  
+}
+
+@media (width > 768px) {
+  nav {
+    padding: 2rem 1rem;
+  }
+
+
+  .nav__menu__btn {
+    display: none;
+   
+  }
+
+  .nav__links {
+    padding: 0.75rem 3rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 3rem;
+    flex-direction: row;
+    max-width: fit-content;
+    border-radius: 5rem;
+    background-color: black;
+
+  }
+
+  .nav__links a:hover {
+    color: var(--cloudy);
+    font-size: larger;
+  }
+  
+  .nav__links a.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+  .header__container {
+    display: grid;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, calc(var(--max-width) * 0.4))
+      minmax(0, calc(var(--max-width) * 0.6))
+      minmax(1rem, 1fr);
+    align-items: center;
+  }
+
+  .header__image {
+    min-height: max(75vh, 650px);
+    grid-area: 1/3/2/5;
+  }
+
+  .header__content {
+    text-align: left;
+    padding-top: 10rem;
+    grid-column: 2/3;
+  }
+
+  .header__content h1 {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+
+  .header__content h2 {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+
+  .banner {
+    display: grid;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, calc(var(--max-width) / 4))
+      minmax(0, calc(var(--max-width) / 4))
+      minmax(0, calc(var(--max-width) / 4))
+      minmax(0, calc(var(--max-width) / 4))
+      minmax(1rem, 1fr);
+    background-color: gray;
+  }
+
+  .banner__card:nth-child(1) {
+    grid-column: 1/3;
+  }
+}
+
+@media (width > 1024px) {
+  .nav__links {
+    padding: 0.75rem 4rem;
+    gap: 4rem;
+  }
+}
